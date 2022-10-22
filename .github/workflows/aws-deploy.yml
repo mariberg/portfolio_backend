@@ -1,6 +1,4 @@
 on: [push]
-#env:
-  #AWS_REGION : "<example-aws-region>" #region here? Something else needed?
     permissions:
       id-token: write
       contents: read
