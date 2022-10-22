@@ -1,7 +1,7 @@
 on: [push]
 #env:
   #AWS_REGION : "<example-aws-region>" #region here? Something else needed?
-    # These permissions are needed to interact with GitHub's OIDC Token endpoint.
+    #These permissions are needed to interact with GitHub's OIDC Token endpoint.
     permissions:
       id-token: write
       contents: read
@@ -26,11 +26,11 @@ on: [push]
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@v1
         with: 
-          # where to add permissions if needed on workflow level????
+          #where to add permissions if needed on workflow level????
           role-to-assume: arn:aws:iam::696551956218:role/Portfolio_backend_github_role
           aws-region: eu-west-2
       - name: Deploy with CDK
         - run: cdk synth
         - run: cdk deploy
-      #- name: Run Cypress test
+      #-name: Run Cypress test
    
