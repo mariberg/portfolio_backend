@@ -1,6 +1,6 @@
 on: [push]
-env:
-  AWS_REGION : "<example-aws-region>" #region here? Something else needed?
+#env:
+  #AWS_REGION : "<example-aws-region>" #region here? Something else needed?
     # These permissions are needed to interact with GitHub's OIDC Token endpoint.
     permissions:
       id-token: write
@@ -10,7 +10,7 @@ env:
     runs-on: ubuntu-latest
     steps:
       - name: Git clone the repository
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
       - name: zip Lambda function
       -uses: thedoctor0/zip-release@main
        with:
@@ -18,21 +18,19 @@ env:
         directory: dynamo_increment.js
         path: /lambda
       - name: Use Node.js
-      - uses: actions/setup-node@v3
+        uses: actions/setup-node@v3
         with:
           node-version: '16.x'
       - name: Install dependencies
-      - run: npm install
+        run: npm install
       - name: configure aws credentials
-      - uses: aws-actions/configure-aws-credentials@v1
+        uses: aws-actions/configure-aws-credentials@v1
         with: 
           # where to add permissions if needed on workflow level????
           role-to-assume: arn:aws:iam::696551956218:role/Portfolio_backend_github_role
           aws-region: eu-west-2
       - name: Deploy with CDK
-        - name: synth stack
         - run: cdk synth
-        - name: deploy stack
         - run: cdk deploy
-      - name: Run Cypress test
+      #- name: Run Cypress test
    
