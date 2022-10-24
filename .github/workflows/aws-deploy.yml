@@ -2,14 +2,16 @@ on: [push]
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    permissions:
+          id-token: write
+          contents: read
     steps:
       - name: Git clone the repository
         uses: actions/checkout@v3
       - name: zip Lambda function
-      - uses: thedoctor0/zip-release@main
+        uses: thedoctor0/zip-release@main
         with:
-          type: 'zip'
-          directory: dynamo_increment.js
+          filename: dynamo_increment.js
           path: /lambda
       - name: Use Node.js
         uses: actions/setup-node@v3
@@ -18,9 +20,6 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: configure aws credentials
-        permissions:
-          id-token: write
-          contents: read
         uses: aws-actions/configure-aws-credentials@v1
         with: 
           #where to add permissions if needed on workflow level????
@@ -28,6 +27,6 @@ jobs:
           aws-region: eu-west-2
       - name: Deploy with CDK
         run: cdk synth
-        run: cdk deploy
+      - run: cdk deploy
       #-name: Run Cypress test
    
