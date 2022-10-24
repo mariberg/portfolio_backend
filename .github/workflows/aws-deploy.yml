@@ -25,8 +25,9 @@ jobs:
         with: 
           role-to-assume: arn:aws:iam::696551956218:role/Portfolio_backend_github_role
           aws-region: eu-west-2
-      - name: Deploy with CDK
-        run: cdk synth
+      - run: npm install -g aws-cdk
+      - run: npm install aws-cdk-lib
+      - run: cdk synth
       - run: cdk deploy
       #-name: Run Cypress test
    
