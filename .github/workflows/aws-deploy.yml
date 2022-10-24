@@ -12,7 +12,8 @@ jobs:
         uses: thedoctor0/zip-release@main
         with:
           filename: lambda.zip
-          path: /lambda
+          directory: lambda
+          path: ../../
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
