@@ -28,6 +28,6 @@ jobs:
       - run: npm install -g aws-cdk
       - run: npm install aws-cdk-lib
       - run: cdk synth
-      - run: cdk deploy
+      - run: cdk deploy --require-approval never
       #-name: Run Cypress test
    
