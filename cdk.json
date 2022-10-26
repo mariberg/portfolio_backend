@@ -4,6 +4,7 @@
     "include": [
       "**"
     ],
+    "requireApproval": "never",
     "exclude": [
       "README.md",
       "cdk*.json",
