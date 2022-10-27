@@ -33,5 +33,5 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           browser: chrome
-          spec: cypress/e2e/visitorCount_test.cy.js
+          spec: ../../cypress/e2e/visitorCount_test.cy.js
    
