@@ -18,7 +18,8 @@
     "jest": "^27.5.1",
     "ts-jest": "^27.1.4",
     "ts-node": "^10.9.1",
-    "typescript": "~3.9.7"
+    "typescript": "~3.9.7",
+      "cypress": "^10.9.0"
   },
   "dependencies": {
     "@aws-solutions-constructs/aws-apigateway-lambda": "^2.26.0",
