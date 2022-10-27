@@ -29,5 +29,9 @@ jobs:
       - run: npm install aws-cdk-lib
       - run: cdk synth
       - run: cdk deploy --require-approval never
-      #-name: Run Cypress test
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          browser: chrome
+          spec: cypress/e2e/visitorCount_test.cy.js
    
