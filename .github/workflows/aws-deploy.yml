@@ -31,5 +31,6 @@ jobs:
       - run: cdk deploy --require-approval never
       - name: Cypress run
         uses: cypress-io/github-action@v4
-        run: npx cypress run
+        with:
+          start: npx cypress run
    
