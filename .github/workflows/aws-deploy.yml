@@ -31,7 +31,5 @@ jobs:
       - run: cdk deploy --require-approval never
       - name: Cypress run
         uses: cypress-io/github-action@v4
-        with:
-          browser: chrome
-          spec: ../cypress/e2e/visitorCount_test.cy.js
+        run: npx cypress run
    
