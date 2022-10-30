@@ -7,4 +7,6 @@ module.exports = defineConfig({
     },
     baseUrl: "https://x9yxbl5ntc.execute-api.eu-west-2.amazonaws.com/prod/",
   },
+  video: false,
+  screenshotOnRunFailure: false
 });
