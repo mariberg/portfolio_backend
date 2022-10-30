@@ -1,14 +1,14 @@
 # Cloud Resume Challenge - backend for my portfolio site
 
-This project has been greated based on the [Cloud Resume Challenge](https://cloudresumechallenge.dev/)
+This project has been greated based on the [Cloud Resume Challenge](https://cloudresumechallenge.dev/), which gives a roadmap for creating a fullstack project with AWS, with plenty of opportunities for choosing your own path along the way. 
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+My backend consists of AWS API Gateway that sits between the client and backend services. The API Gateway accesses Lambda function, which 
+updates a DynamoDB visitor counter table.  Each HTTP request increments the visitor counter and an updated value is then returned to the client through Lambda and API Gateway.
 
-## Useful commands
+The project as been deployed as infrastructed-as-code (IaC) and the tool that has been used for that is AWS CDK (Cloud development kit). Open-source extension of the AWS SDK, called AWS Solution Constructs has been used for the Lambda to Dynamo pattern. 
 
-* `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
-* `cdk deploy`      deploy this stack to your default AWS account/region
-* `cdk diff`        compare deployed stack with current state
-* `cdk synth`       emits the synthesized CloudFormation template
+Deployment has been automated with Github Actions workflow, which zips the Lambda function, installs dependencies, configures AWS credentials with OIDC, deploys CDK stack and runs Cypress tests.
+
+
+
+
