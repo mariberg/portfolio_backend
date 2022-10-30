@@ -1,7 +1,6 @@
-# Welcome to your CDK TypeScript project
+# Cloud Resume Challenge - backend for my portfolio site
 
-You should explore the contents of this project. It demonstrates a CDK app with an instance of a stack (`PortfolioBackendStack`)
-which contains an Amazon SQS queue that is subscribed to an Amazon SNS topic.
+This project has been greated based on the [Cloud Resume Challenge](https://cloudresumechallenge.dev/)
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
