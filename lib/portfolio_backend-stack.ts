@@ -10,9 +10,9 @@ export class PortfolioBackendStack extends Stack {
     super(scope, id, props);
 
     
-    // defines an AWS Lambda resource
+    // Lambda to Dynamo solutions construct
     const lambdaToDynamo: LambdaToDynamoDBProps = {
-      lambdaFunctionProps: { // User provided props to override the default props for the Lambda function
+      lambdaFunctionProps: {
         runtime: lambda.Runtime.NODEJS_14_X,
         code: lambda.Code.fromAsset('lambda'),
         handler: 'dynamo_increment.handler',
@@ -30,7 +30,6 @@ export class PortfolioBackendStack extends Stack {
 
     const lambdaToDyn = new LambdaToDynamoDB(this, 'visitorCounter', lambdaToDynamo);
   
-
     
     const api = new apigw.LambdaRestApi(this, 'portfolio_api', {
       handler: lambdaToDyn.lambdaFunction,
