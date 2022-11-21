@@ -4,11 +4,14 @@ This project has been created based on the [Cloud Resume Challenge](https://clou
 
 The frontend for the project can be found in this [repo](https://github.com/mariberg/portfolio_frontend). My deployed portfolio site is [here](https://marikabergman.com).
 
+This diagram explains the structure of the whole fullstack project:
+
+![Alt text](/img/diagram.png)
 
 ## Project structure
 
-The backend consists of AWS API Gateway that sits between the client and backend services. The API Gateway accesses Lambda function, which 
-updates a DynamoDB visitor counter table.  Each HTTP request increments the visitor counter and an updated value is then returned to the client through Lambda and API Gateway.
+The backend consists of AWS API Gateway that sits between the client and backend services. The API Gateway accesses Lambda function, which updates a DynamoDB visitor counter table.  Each HTTP request increments the visitor counter and an updated value is then returned to the client through Lambda and API Gateway.
+
 
 ## Deployment
 
